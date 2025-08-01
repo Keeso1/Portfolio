@@ -78,7 +78,6 @@ class MyHeader extends HTMLElement {
         .header-controls {
           display: flex;
           align-items: center;
-          gap: 1rem;
         }
         
         nav {
@@ -205,7 +204,6 @@ class MyHeader extends HTMLElement {
 
           .header-controls {
             order: 3;
-            gap: 0.5rem;
           }
 
           h1 {
@@ -265,7 +263,9 @@ class MyHeader extends HTMLElement {
       const navLinks = this.shadowRoot.querySelectorAll('nav a');
 
       if (hamburger && nav) {
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          console.log("burgermenu clicked");
           hamburger.classList.toggle('active');
           nav.classList.toggle('active');
         });
@@ -278,13 +278,16 @@ class MyHeader extends HTMLElement {
           });
         });
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-          if (!this.shadowRoot.contains(e.target)) {
-            hamburger.classList.remove('active');
-            nav.classList.remove('active');
-          }
-        });
+        // Close menu when clicking outside - use a timeout to avoid immediate closure
+        setTimeout(() => {
+          document.addEventListener('click', (e) => {
+            const headerElement = this.shadowRoot.querySelector('header');
+            if (headerElement && !headerElement.contains(e.target)) {
+              hamburger.classList.remove('active');
+              nav.classList.remove('active');
+            }
+          });
+        }, 100);
       }
     }
 
