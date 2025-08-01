@@ -267,9 +267,11 @@ footer a:hover {
 .pictureframework{
   display: grid;
   grid-template-columns: 
-    repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 2rem;
-  margin: 2rem;
+    repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 5rem;
+  padding: 2rem;
+  justify-items: center;
+  align-items: center;
 }
 
 .pictureframework h2{
