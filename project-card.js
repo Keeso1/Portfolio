@@ -78,6 +78,7 @@ class MyComponent extends HTMLElement {
   connectedCallback() {
 
     const href = this.getAttribute("href");
+    const target = this.getAttribute("target");
 
     let cardHeader = this.querySelector('h1');
     let cardParagraph = this.querySelector('p');
@@ -103,7 +104,11 @@ class MyComponent extends HTMLElement {
 
     if (href) {
         this.card.addEventListener("click", () => {
-        window.location.href = href;
+            if (target === "_blank") {
+                window.open(href, "_blank");
+            } else {
+                window.location.href = href;
+            }
         });
     }
 
