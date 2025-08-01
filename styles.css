@@ -64,64 +64,6 @@ body.dark{
   --gradient-hover: linear-gradient(0deg, var(--bg) 100%, var(--bg-light));
 }
 
-header {
-  display: flex;
-  background-color: var(--bg-light);
-  padding: 1rem 2rem;
-  justify-content: space-between;
-  flex-flow: row wrap;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 5rem;
-  padding: 0rem 2rem;
-}
-
-nav a {
-  position: relative;
-  font-size: var(--font-size-3);
-  color: var(--text);
-  text-decoration: none; /* disable default underline */
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -2px;
-  background-color: var(--secondary);
-  transition: width 0.3s ease-in, transform 0.3s ease;
-}
-
-nav a:hover {
-  color: var(--secondary);
-  transform: translateY(-0.5rem);
-}
-
-nav a:hover::after {
-  width: 100%;
-  transform: translateY(-0.5rem);
-}
-
-#darkmode-icon {
-  width: 2rem;
-  height: 2rem;
-  color: var(--text-muted);
-  transition: color 0.3s ease;
-}
-
-#back-icon {
-  width: 4rem;
-  height: 4rem;
-  color: var(--text-muted);
-  transition: color 0.3s ease;
-}
-
 .icon {
   max-width: 5%;
   align-content: center;
@@ -134,22 +76,6 @@ nav a:hover::after {
 
 .icon:hover {
   transform: translateY(-0.5rem);
-}
-
-.icon:hover #darkmode-icon {
-  color: var(--primary);
-}
-
-body.dark #darkmode-icon{
-  color: var(--text-muted);
-}
-
-.icon:hover #back-icon {
-  color: var(--primary);
-}
-
-body.dark #back-icon{
-  color: var(--text-muted);
 }
 
 body {
