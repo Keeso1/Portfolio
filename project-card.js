@@ -13,8 +13,9 @@ class MyComponent extends HTMLElement {
 .card {
     position: relative;
     flex-flow: column;
-    min-width: 5rem;
-    margin: 2.5rem;
+    width: 20rem;
+    max-width: 25rem;
+    margin: 1rem;
     aspect-ratio: 16 / 9;
     justify-content: flex-end;
     cursor: pointer;
