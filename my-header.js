@@ -23,130 +23,224 @@ class MyHeader extends HTMLElement {
     const styles = `
       <style>
         header {
-        display: flex;
-        background-color: var(--bg-light);
-        padding: 1rem 2rem;
-        justify-content: space-between;
-        flex-flow: row wrap;
-      }
+          display: flex;
+          background-color: var(--bg-light);
+          padding: 1rem 2rem;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+        }
 
-      h1{
-        font-size: var(--font-size-5);
-        max-width: fit-content;
-        line-height: 1em;
-        color: var(--primary);
-      }
+        h1{
+          font-size: var(--font-size-5);
+          max-width: fit-content;
+          line-height: 1em;
+          color: var(--primary);
+        }
 
-      #back-icon {
-        width: 4rem;
-        height: 4rem;
-        color: var(--text-muted);
-        transition: color 0.3s ease;
-      }
+        #back-icon {
+          width: 4rem;
+          height: 4rem;
+          color: var(--text-muted);
+          transition: color 0.3s ease;
+        }
 
-      .icon:hover #back-icon {
-        color: var(--primary);
-      }
+        .icon:hover #back-icon {
+          color: var(--primary);
+        }
 
-      body.dark #back-icon{
-        color: var(--text-muted);
-      }
+        body.dark #back-icon{
+          color: var(--text-muted);
+        }
 
-      .icon {
-        max-width: 5%;
-        align-content: center;
-        background: none;
-        border: none;
-        padding: 0;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-      }
+        .icon {
+          max-width: 5%;
+          align-content: center;
+          background: none;
+          border: none;
+          padding: 0;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+        }
 
-      .icon:hover {
-        transform: translateY(-0.5rem);
-      }
+        .icon:hover {
+          transform: translateY(-0.5rem);
+        }
 
-      .icon:hover #darkmode-icon {
-        color: var(--primary);
-      }
+        .icon:hover #darkmode-icon {
+          color: var(--primary);
+        }
 
-      body.dark #darkmode-icon{
-        color: var(--text-muted);
-      }
-      
-      nav {
-        display: flex;
-        align-items: center;
-        gap: 5rem;
-        padding: 0rem 2rem;
-      }
+        body.dark #darkmode-icon{
+          color: var(--text-muted);
+        }
 
-      nav a {
-        position: relative;
-        font-size: var(--font-size-3);
-        color: var(--text);
-        text-decoration: none; /* disable default underline */
-        transition: color 0.3s ease, transform 0.3s ease;
-      }
+        .header-controls {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+        
+        nav {
+          display: flex;
+          align-items: center;
+          gap: 5rem;
+          padding: 0rem 2rem;
+        }
 
-      nav a::after {
-        content: "";
-        position: absolute;
-        width: 0%;
-        height: 2px;
-        left: 0;
-        bottom: -2px;
-        background-color: var(--secondary);
-        transition: width 0.3s ease-in, transform 0.3s ease;
-      }
+        nav a {
+          position: relative;
+          font-size: var(--font-size-3);
+          color: var(--text);
+          text-decoration: none;
+          transition: color 0.3s ease, transform 0.3s ease;
+        }
 
-      nav a:hover {
-        color: var(--secondary);
-        transform: translateY(-0.5rem);
-      }
+        nav a::after {
+          content: "";
+          position: absolute;
+          width: 0%;
+          height: 2px;
+          left: 0;
+          bottom: -2px;
+          background-color: var(--secondary);
+          transition: width 0.3s ease-in, transform 0.3s ease;
+        }
 
-      nav a:hover::after {
-        width: 100%;
-        transform: translateY(-0.5rem);
-      }
+        nav a:hover {
+          color: var(--secondary);
+          transform: translateY(-0.5rem);
+        }
 
-      #darkmode-icon {
-        width: 2rem;
-        height: 2rem;
-        color: var(--text-muted);
-        transition: color 0.3s ease;
-      }
-      nav a {
-        margin: 0 0.5rem;
-        text-decoration: none;
-        color: inherit;
-      }
+        nav a:hover::after {
+          width: 100%;
+          transform: translateY(-0.5rem);
+        }
 
-      .icon {
-        background: none;
-        border: none;
-        cursor: pointer;
-      }
+        #darkmode-icon {
+          width: 2rem;
+          height: 2rem;
+          color: var(--text-muted);
+          transition: color 0.3s ease;
+        }
 
-      a.icon {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color: inherit;
-      }
-    </style>
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+          padding: 0.5rem;
+          z-index: 1001;
+        }
+
+        .hamburger span {
+          width: 25px;
+          height: 3px;
+          background-color: var(--text);
+          margin: 3px 0;
+          transition: 0.3s;
+          border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+          transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+          transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        a.icon {
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          color: inherit;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+          header {
+            flex-wrap: wrap;
+          }
+
+          .hamburger {
+            display: flex;
+          }
+
+          nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--bg-light);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            padding: 0;
+            transition: left 0.3s ease;
+            z-index: 1000;
+          }
+
+          nav.active {
+            left: 0;
+          }
+
+          nav a {
+            font-size: 2rem;
+            padding: 1rem;
+          }
+
+          nav a:hover {
+            transform: none;
+          }
+
+          nav a:hover::after {
+            transform: none;
+          }
+
+          .header-controls {
+            order: 3;
+            gap: 0.5rem;
+          }
+
+          h1 {
+            font-size: 1.5rem;
+          }
+
+          .icon {
+            max-width: none;
+          }
+
+          #darkmode-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+        }
+      </style>
     `;
 
     const homeMarkup = `
       <header>
         <h1>Isac Lindh</h1>
-        <nav>
+        <nav id="nav-menu">
           <a href="#home">Home</a>
           <a href="#about">About me</a>
           <a href="#projects">Projects</a>
           <a href="#site-footer">Contact me</a>
         </nav>
-        <button class="icon dark-toggle" aria-label="Toggle dark mode"></button>
+        <div class="header-controls">
+          <div class="hamburger" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <button class="icon dark-toggle" aria-label="Toggle dark mode"></button>
+        </div>
       </header>
     `;
 
@@ -163,6 +257,36 @@ class MyHeader extends HTMLElement {
     `;
 
     this.shadowRoot.innerHTML = styles + (type === "project" ? projectMarkup : homeMarkup);
+
+    // Setup hamburger menu for home type
+    if (type !== "project") {
+      const hamburger = this.shadowRoot.querySelector('#hamburger-menu');
+      const nav = this.shadowRoot.querySelector('#nav-menu');
+      const navLinks = this.shadowRoot.querySelectorAll('nav a');
+
+      if (hamburger && nav) {
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('active');
+          nav.classList.toggle('active');
+        });
+
+        // Close menu when clicking on nav links
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!this.shadowRoot.contains(e.target)) {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+          }
+        });
+      }
+    }
 
     // Setup dark mode toggle button
     const btn = this.shadowRoot.querySelector(".dark-toggle");
