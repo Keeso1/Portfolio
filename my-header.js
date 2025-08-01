@@ -134,7 +134,7 @@ class MyHeader extends HTMLElement {
         .hamburger span {
           width: 25px;
           height: 3px;
-          background-color: var(--text);
+          background-color: var(--text-muted);
           margin: 3px 0;
           transition: 0.3s;
           border-radius: 2px;
@@ -160,7 +160,7 @@ class MyHeader extends HTMLElement {
         }
 
         /* Mobile Styles */
-        @media (max-width: 768px) {
+        @media (max-width: 1049px) {
           header {
             flex-wrap: wrap;
           }

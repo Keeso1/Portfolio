@@ -15,7 +15,7 @@ class MyComponent extends HTMLElement {
     flex-flow: column;
     width: 20rem;
     max-width: 25rem;
-    margin: 1rem;
+    padding: 1rem;
     aspect-ratio: 16 / 9;
     justify-content: flex-end;
     cursor: pointer;
