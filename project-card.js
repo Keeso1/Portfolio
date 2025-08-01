@@ -13,7 +13,7 @@ class MyComponent extends HTMLElement {
 .card {
     position: relative;
     flex-flow: column;
-    min-width: 15rem;
+    min-width: 5rem;
     margin: 2.5rem;
     aspect-ratio: 16 / 9;
     justify-content: flex-end;

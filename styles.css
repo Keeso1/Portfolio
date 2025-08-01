@@ -274,4 +274,12 @@ footer a:hover {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  h2 {
+    font-size: var(--font-size-3);
+  }
+  .track p {
+    font-size: var(--font-size-1);
+  }
+}
   
