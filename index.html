@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <script src="project-card.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Isac Lindh</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About me</a>
+      <a href="#projects">Projects</a>
+      <a href="#site-footer">Contact me</a>
+    </nav>
+    <button class="icon dark-toggle" aria-label="Toggle dark mode">
+      <svg id="darkmode-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="24" height="24" aria-label="Toggle dark mode">
+        <path 
+          fill="currentColor"
+          d="M87.823 60.7c-.463-.423-1.142-.506-1.695-.214-15.834 8.398-35.266 2.812-44.232-12.718-8.966-15.53-4.09-35.149 11.101-44.665.531-.332.796-.963.661-1.574-.134-.612-.638-1.074-1.259-1.153-9.843-1.265-19.59.692-28.193 5.66C13.8 12.041 6.356 21.743 3.246 33.35S1.732 57.08 7.741 67.487c6.008 10.407 15.709 17.851 27.316 20.961C38.933 89.486 42.866 90 46.774 90c7.795 0 15.489-2.044 22.42-6.046 8.601-4.966 15.171-12.43 18.997-21.586.242-.578.094-1.245-.368-1.668z"
+        />
+      </svg>
+    </button>
+  </header>
+
+  
+  <section id="home">
+    <div class="herocard">
+      <div class="textcol">
+        <h2>Hello!</h2>
+        <p>I am Isac - a Webdeveloper, UX designer and Music producer</p>
+        <div class="herobuttons">
+          <a href="https://www.linkedin.com/in/isac-lindh-1a0747153" class="resume-button" aria-label="My linkedIn" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+  <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5h4V24h-4V8.5zm7.5 0h3.8v2.1h.05c.53-1 1.82-2.1 3.75-2.1 4.01 0 4.75 2.64 4.75 6.08V24h-4v-7.91c0-1.88-.03-4.29-2.61-4.29-2.61 0-3.01 2.04-3.01 4.15V24h-4V8.5z"/>
+</svg>
+
+            <span>My LinkedIn</span>
+          </a>
+          <a href="/assets/Resumé.pdf" class="resume-button" download aria-label="Download resume">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+            </svg>
+            <span>Download CV</span>
+          </a>
+        </div>
+      </div>
+      <img src="assets\img\isac.jpg" alt="">
+    </div>
+  </section>
+  
+  <section id="skills">
+    <div class="marquee-content">
+      <div class="track">
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>JAVASCRIPT</p>
+        <p>PHP</p>
+        <p>SQL</p>
+        <p>PYTHON</p>
+        <p></p>
+      </div>
+      <div class="track">
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>JAVASCRIPT</p>
+        <p>PHP</p>
+        <p>SQL</p>
+        <p>PYTHON</p>
+        <p></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About me</h2>
+    <div class="rows">
+
+      <div class="wrapper">
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+          </svg>
+          <span>Yeeeeah</span>
+        </p>
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+          </svg>
+          <span>Yeeeeah</span>
+        </p>
+      </div>
+
+      <div class="wrapper">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam finibus id magna sit amet dictum. Vivamus scelerisque lectus non massa tempus sagittis. Nulla rhoncus, lectus vel scelerisque gravida, lorem lectus gravida libero, et elementum sapien velit eget nibh.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projectswrapper">
+      <project-card href="webdevprojects/kvit_dist">
+        <h1>KVIT 2024 Website</h1>
+        <p>yess</p>
+        <img src="assets/img/kvitscreen.png" alt="picture">
+      </project-card>
+
+      <project-card href="webdevprojects/729G28/projektC">
+        <h1>NFL team database</h1>
+        <p>yess</p>
+        <img src="assets/img/NFL.png" alt="picture">
+      </project-card>
+
+      <project-card href="webdevprojects/dist/">
+        <h1>hej</h1>
+        <p>NPX vite for running the code. Clone from git repo then run npm install then npx vite.</p>
+        <img src="assets/img/pic.png" alt="picture">
+      </project-card>
+
+      <project-card href="uxprojects/foalingapp/">
+        <h1>Foaling-app</h1>
+        <p>NPX vite for running the code. Clone from git repo then run npm install then npx vite.</p>
+        <img src="" alt="picture">
+      </project-card>
+
+      <project-card href="uxprojects/sskf/">
+        <h1>SSKF</h1>
+        <p>NPX vite for running the code. Clone from git repo then run npm install then npx vite.</p>
+        <img src="assets/img/sskf/sskf_after.png" alt="picture">
+      </project-card>
+
+      <project-card href="uxprojects/dinos/">
+        <h1>Dinos tomato pie</h1>
+        <p>NPX vite for running the code. Clone from git repo then run npm install then npx vite.</p>
+        <img src="assets/img/dinos/dinos_after.png" alt="picture">
+      </project-card>
+
+      <project-card href="uxprojects/chestertourist/">
+        <h1>Chestertourist</h1>
+        <p>NPX vite for running the code. Clone from git repo then run npm install then npx vite.</p>
+        <img src="assets/img/chestertourist/chestertourist_after.png" alt="picture">
+      </project-card>
+    </div>
+  </section>
+  
+
+  <footer id="site-footer">
+    <div class="footer-contact">
+      <p><strong>Contact</strong></p>
+      <p>Email: <a href="mailto:isac@example.com">isac@example.com</a></p>
+    </div>
+  </footer>
+</body>
+</html>
