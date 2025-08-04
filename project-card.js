@@ -48,6 +48,8 @@ class MyComponent extends HTMLElement {
 }
 
 .cardheader{
+    font-family: "Rubik Mono One", monospace;
+    font-size: var(--font-size-1);
     text-align: center;
     padding: 0.25rem;
 }

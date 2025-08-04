@@ -32,7 +32,8 @@ class MyHeader extends HTMLElement {
         }
 
         h1{
-          font-size: var(--font-size-5);
+          font-family: "Rubik Mono One", monospace;
+          font-size: var(--font-size-3);
           max-width: fit-content;
           line-height: 1em;
           color: var(--primary);
